@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dev-banner {
+  width: 100vw;
+  --tw-bg-opacity: 1;
+  background-color: rgb(190 18 60 / var(--tw-bg-opacity));
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.mt {
+  margin-top: 1.5rem;
+}
+
+@layer base {
+  /* persion */
+
+  /* @font-face {
+      font-family: yekanBakh;
+      font-weight: 100;
+      font-style: normal;
+      src: url('../assets/fonts/Yekan_Bakh_Thin.TTF');
+      font-display: swap;
+  } */
+  @font-face {
+    font-family: yekanBakh;
+    font-weight: 300;
+    font-style: normal;
+    src: url("../assets/fonts/Yekan_Bakh_Light.otf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: yekanBakh;
+    font-weight: 400;
+    font-style: normal;
+    src: url("../assets/fonts/Yekan_Bakh_Regular.otf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: yekanBakh;
+    font-weight: 500;
+    font-style: normal;
+    src: url("../assets/fonts/Yekan_Bakh_Medium.otf");
+    font-display: swap;
+  }
+  /* @font-face {
+      font-family: yekanBakh;
+      font-weight:600;
+      font-style: normal;
+      src: url('../assets/fonts/Yekan_Bakh_Semi_Bold.TTF');
+      font-display: swap;
+  } */
+  @font-face {
+    font-family: yekanBakh;
+    font-weight: 700;
+    font-style: normal;
+    src: url("../assets/fonts/Yekan_Bakh_Bold.otf");
+    font-display: swap;
+  }
+  /* @font-face {
+      font-family: yekanBakh;
+      font-weight: 800;
+      font-style: normal;
+      src: url('../assets/fonts/Yekan_Bakh_Extra_Bold.TTF');
+      font-display: swap;
+  } */
+
+  /* english */
+
+  @font-face {
+    font-family: spaceGrotesk;
+    font-weight: 300;
+    font-style: normal;
+    src: url("../assets/fonts/SpaceGrotesk-Light.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: spaceGrotesk;
+    font-weight: 400;
+    font-style: normal;
+    src: url("../assets/fonts/SpaceGrotesk-Regular.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: spaceGrotesk;
+    font-weight: 500;
+    font-style: normal;
+    src: url("../assets/fonts/SpaceGrotesk-Medium.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: spaceGrotesk;
+    font-weight: 600;
+    font-style: normal;
+    src: url("../assets/fonts/SpaceGrotesk-SemiBold.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: spaceGrotesk;
+    font-weight: 700;
+    font-style: normal;
+    src: url("../assets/fonts/SpaceGrotesk-Bold.ttf");
+    font-display: swap;
+  }
+}
+
+@layer utilities {
+  .right-to-left {
+    direction: rtl;
+  }
+  .left-to-right {
+    direction: ltr;
+  }
+
+  /* input number */
+  .no-spinners::-webkit-outer-spin-button,
+  .no-spinners::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .no-spinners {
+    -moz-appearance: textfield;
+    appearance: none;
+  }
+
+  /* datePicker */
+
+  .date-picker .rmdp-container {
+    width: 100% !important;
+  }
+
+  .date-picker .rmdp-container .rmdp-week-day {
+    color: rgb(229 124 67 / var(--tw-bg-opacity)) !important;
+  }
+
+  .date-picker .rmdp-container .rmdp-arrow {
+    border-right: solid rgb(229 124 67 / var(--tw-bg-opacity)) !important;
+    border-bottom: solid rgb(229 124 67 / var(--tw-bg-opacity)) !important;
+    border-width: 0 2px 2px 0 !important;
+    display: inline-block !important;
+    height: 3px !important;
+    margin-top: 5px !important;
+    padding: 2px !important;
+    width: 3px !important;
+  }
+
+  .date-picker .rmdp-container .rmdp-arrow-container:hover .rmdp-arrow {
+    border: solid #fff !important;
+    border-width: 0 2px 2px 0 !important;
+  }
+
+  .date-picker .rmdp-container .rmdp-arrow-container:hover {
+    background-color: rgb(229 124 67 / var(--tw-bg-opacity)) !important;
+    padding-top: 2px !important;
+  }
+
+  .date-picker .rmdp-container .rmdp-arrow-container:hover {
+    background-color: rgb(229 124 67 / var(--tw-bg-opacity)) !important;
+    padding-top: 2px !important;
+  }
+
+  .date-picker .rmdp-container .rmdp-day.rmdp-selected span:not(.highlight) {
+    background-color: rgba(229, 124, 67, 1) !important;
+  }
+
+  .date-picker .rmdp-container .rmdp-day.rmdp-today span {
+    background-color: rgba(239, 176, 142, 1) !important;
+    color: #fff !important;
+  }
+
+  .date-picker
+    .rmdp-container
+    .rmdp-day:not(.rmdp-disabled, .rmdp-day-hidden)
+    span:hover {
+    background-color: rgba(250, 229, 217, 1) !important;
+    color: #000 !important;
+  }
+
+  /* datePicker */
+
+  /* for explode animations */
+  .explode .piece {
+    @apply animate-move-shrink-round-fade-scatter !important;
+  }
+  .moveIconLeftRight {
+    @apply animate-move-left-right !important;
+  }
+  .moveIconRightLeft {
+    @apply animate-move-right-left !important;
+  }
+
+  /* navigation */
+  .navigation svg {
+    filter: drop-shadow(0px 0px 10px var(--Neutral-50, #e0e0e1));
+  }
+
+  /* remove scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* thanos effect */
+
+  .thanos-effect canvas {
+    position: absolute;
+    filter: blur("50px");
+    transition: transform 1s ease-out, opacity 1s ease-out;
+  }
+}

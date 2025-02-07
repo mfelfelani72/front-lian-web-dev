@@ -1,0 +1,27 @@
+<svg width="58" height="4" viewBox="0 0 58 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="58" height="4" fill="#878686"/>
+<g id="5.Dashboard">
+<path d="M-404 -254C-404 -255.105 -403.105 -256 -402 -256H1015C1016.1 -256 1017 -255.105 1017 -254V794C1017 795.105 1016.1 796 1015 796H-402C-403.105 796 -404 795.105 -404 794V-254Z" fill="#4C4B58"/>
+<path d="M-402 -255H1015V-257H-402V-255ZM1016 -254V794H1018V-254H1016ZM1015 795H-402V797H1015V795ZM-403 794V-254H-405V794H-403ZM-402 795C-402.552 795 -403 794.552 -403 794H-405C-405 795.657 -403.657 797 -402 797V795ZM1016 794C1016 794.552 1015.55 795 1015 795V797C1016.66 797 1018 795.657 1018 794H1016ZM1015 -255C1015.55 -255 1016 -254.552 1016 -254H1018C1018 -255.657 1016.66 -257 1015 -257V-255ZM-402 -257C-403.657 -257 -405 -255.657 -405 -254H-403C-403 -254.552 -402.552 -255 -402 -255V-257Z" fill="white" fill-opacity="0.1"/>
+<g id="Dashboard ">
+<g clip-path="url(#clip0_8_44)">
+<rect x="-304" y="-156" width="393" height="852" rx="30" fill="white"/>
+<g id="Group 1000002209">
+</g>
+<g id="Frame 1142">
+<rect x="-286.5" y="-22" width="359" height="80" rx="16" fill="#1F1E2E"/>
+<g id="Group 1000002283">
+<path id="Vector 98" d="M1.99998 2H17.5" stroke="#797882" stroke-width="3" stroke-linecap="round"/>
+<path id="Vector 99" d="M21.5 2H37" stroke="#797882" stroke-width="3" stroke-linecap="round"/>
+<path id="Vector 97" d="M41 2H56.5" stroke="#E57C43" stroke-width="3" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_8_44">
+<rect x="-304" y="-156" width="393" height="852" rx="30" fill="white"/>
+</clipPath>
+</defs>
+</svg>

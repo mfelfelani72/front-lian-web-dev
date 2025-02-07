@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+
+# NGINX Service
+  webserver:
+    image: nginx:alpine
+    container_name: aimoonx-webserver
+    # restart: always
+    tty: true
+    ports:
+      - "3000:3000"
+      - "443:443"
+    volumes:
+      - "./:/var/www"
+      - "./docker-files/nginx/conf.d/:/etc/nginx/conf.d/"
+ 
