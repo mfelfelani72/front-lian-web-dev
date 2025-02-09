@@ -6,6 +6,10 @@ import Landing from "./Landing.js";
 // just for test
 const Test = lazy(() => import("../../components/TestCode.jsx"));
 
+// Welcome
+const WelcomeLandingLazy = lazy(() => import("../../../features/welcome/WelcomeLanding.js"));
+const SlideScreenLazy = lazy(() => import("../../../features/welcome/components/SlideScreen.jsx"));
+
 const Content = () => {
   return (
     <div className="w-fullbg-white h-screen xs:grid xs:place-items-center">
@@ -16,7 +20,8 @@ const Content = () => {
 
         {/* Auth */}
         <Route path="*" element={<Landing />}></Route>
-        <Route path="/landing" element={<LazyAuthLanding />}></Route>
+        <Route path="/landing" element={<WelcomeLandingLazy />}></Route>
+        <Route path="/slide-screen" element={<SlideScreenLazy />}></Route>
       </Routes>
     </div>
   );
