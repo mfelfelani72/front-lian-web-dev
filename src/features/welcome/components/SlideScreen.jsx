@@ -9,20 +9,31 @@ import TypoTextInfo from "../../core/components/TypoTextInfo.jsx";
 // Svg & Png
 
 import slide_screen_1 from "../../../../assets/images/png/slide-screen-1.png";
+import slide_screen_2 from "../../../../assets/images/png/slide-screen-2.png";
+import slide_screen_3 from "../../../../assets/images/png/slide-screen-3.png";
 import arrow from "../../../../assets/images/svg/arrow-bg.svg";
 
 const SlideScreen = () => {
+  // states
+  const [indexSlide, setIndexSlide] = useState(2);
   const [slideDetails, setSlideDetails] = useState([
     {
       image: slide_screen_1,
       title: "Explore the world easily",
       description: "To your desire",
     },
-    { image: null, title: "", description: "" },
-    { image: null, title: "", description: "" },
+    {
+      image: slide_screen_2,
+      title: "Reach the unknown spot",
+      description: "To your destination",
+    },
+    {
+      image: slide_screen_3,
+      title: "Make connects with Travello",
+      description: "To your dream trip",
+    },
   ]);
 
-  const [indexSlide, setIndexSlide] = useState(0);
   return (
     <>
       <div className="flex flex-col w-full xs:w-[25rem] h-screen">
@@ -34,24 +45,41 @@ const SlideScreen = () => {
           />
         </div>
         <div className="flex flex-col w-full h-[calc(40%)] p-4 items-end justify-end">
-          <div className="">
+          <div className="w-full">
             <TypoTextTitle className={"w-full font-bold text-4xl"}>
               {slideDetails[indexSlide]?.title}
             </TypoTextTitle>
           </div>
-          <div>
-            <TypoTextInfo className={"w-full mt-0.5 text-lg"}>
+          <div className="w-full">
+            <TypoTextInfo className={"mt-0.5 text-lg"}>
               {slideDetails[indexSlide]?.description}
             </TypoTextInfo>
           </div>
-          <div className="flex flex-row-reverse w-full justify-between mb-10">
-            <div className="flex flex-row-reverse items-center gap-[2px]">
-              <div className="w-6 h-2 bg-[#FF3951] rounded-2xl"></div>
-              <div className="w-4 h-2 bg-[#FFB6B6] rounded-2xl"></div>
-              <div className="w-4 h-2 bg-[#FFB6B6] rounded-2xl"></div>
+          <div className="flex flex-row w-full justify-between mb-10">
+            <div className="flex flex-row items-center gap-[2px]">
+              <div
+                className={`${
+                  indexSlide === 0 ? "w-6 bg-[#FF3951]" : "w-4 bg-[#FFB6B6]"
+                } h-2 rounded-2xl`}
+              ></div>
+              <div
+                className={`
+                 ${indexSlide === 1 ? "w-6 bg-[#FF3951]" : "w-4 bg-[#FFB6B6]"}
+                 h-2 rounded-2xl`}
+              ></div>
+              <div
+                className={`
+                ${
+                  indexSlide === 2 ? "w-6 bg-[#FF3951]" : "w-4 bg-[#FFB6B6]"
+                } h-2 rounded-2xl`}
+              ></div>
             </div>
 
-            <Image src={arrow} alt="arrow" className={"w-[50px] h-[50px]"} />
+            <Image
+              src={arrow}
+              alt="arrow"
+              className={"w-[50px] h-[50px] rtl:rotate-180"}
+            />
           </div>
         </div>
       </div>
