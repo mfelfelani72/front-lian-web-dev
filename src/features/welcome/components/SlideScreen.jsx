@@ -15,7 +15,7 @@ import arrow from "../../../../assets/images/svg/arrow-bg.svg";
 
 const SlideScreen = () => {
   // states
-  const [indexSlide, setIndexSlide] = useState(2);
+  const [indexSlide, setIndexSlide] = useState(0);
   const [slideDetails, setSlideDetails] = useState([
     {
       image: slide_screen_1,
