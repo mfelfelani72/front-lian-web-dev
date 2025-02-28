@@ -17,7 +17,7 @@ import { GetCashLocal, SetCashLocal } from "../../../../utils/lib/Cash.js";
 import slide_screen_1 from "../../../../assets/images/png/slide-screen-1.png";
 import slide_screen_2 from "../../../../assets/images/png/slide-screen-2.png";
 import slide_screen_3 from "../../../../assets/images/png/slide-screen-3.png";
-import arrow from "../../../../assets/images/svg/arrow-bg.svg";
+import arrow from "../../../../assets/icons/svg/arrow-bg.svg";
 
 const SlideScreen = () => {
   // hooks
