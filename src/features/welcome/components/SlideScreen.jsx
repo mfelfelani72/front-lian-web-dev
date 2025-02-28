@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Components
 
 import Image from "../../core/components/Image.jsx";
 import TypoTextTitle from "../../core/components/TypoTextTitle.jsx";
 import TypoTextInfo from "../../core/components/TypoTextInfo.jsx";
+
+// Functions
+import { IconMoveLeftRight } from "../../../../utils/lib/Animations.js";
 
 // Svg & Png
 
@@ -14,6 +18,9 @@ import slide_screen_3 from "../../../../assets/images/png/slide-screen-3.png";
 import arrow from "../../../../assets/images/svg/arrow-bg.svg";
 
 const SlideScreen = () => {
+  // hooks
+  const navigate = useNavigate();
+
   // states
   const [indexSlide, setIndexSlide] = useState(0);
   const [slideDetails, setSlideDetails] = useState([
@@ -33,6 +40,18 @@ const SlideScreen = () => {
       description: "To your dream trip",
     },
   ]);
+
+  // functions
+
+  const increaseIndexSlide = (indexSlide) => {
+    if (indexSlide < 2) setIndexSlide(indexSlide + 1);
+    else navigate("/");
+  };
+
+  const handleClick = () => {
+    console.log(indexSlide);
+    IconMoveLeftRight("arrow", increaseIndexSlide, indexSlide);
+  };
 
   return (
     <>
@@ -76,9 +95,11 @@ const SlideScreen = () => {
             </div>
 
             <Image
+              id="arrow"
+              onClick={handleClick}
               src={arrow}
               alt="arrow"
-              className={"w-[50px] h-[50px] rtl:rotate-180"}
+              className={"w-[50px] h-[50px] rtl:rotate-180 cursor-pointer"}
             />
           </div>
         </div>
