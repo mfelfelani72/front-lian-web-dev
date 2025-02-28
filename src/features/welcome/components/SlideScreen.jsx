@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Components
 
@@ -20,6 +21,7 @@ import arrow from "../../../../assets/images/svg/arrow-bg.svg";
 
 const SlideScreen = () => {
   // hooks
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   // states
@@ -27,18 +29,18 @@ const SlideScreen = () => {
   const [slideDetails, setSlideDetails] = useState([
     {
       image: slide_screen_1,
-      title: "Explore the world easily",
-      description: "To your desire",
+      title: "slide_screen_title_1",
+      description: "slide_screen_description_1",
     },
     {
       image: slide_screen_2,
-      title: "Reach the unknown spot",
-      description: "To your destination",
+      title: "slide_screen_title_2",
+      description: "slide_screen_description_2",
     },
     {
       image: slide_screen_3,
-      title: "Make connects with Travello",
-      description: "To your dream trip",
+      title: "slide_screen_title_3",
+      description: "slide_screen_description_3",
     },
   ]);
 
@@ -47,7 +49,6 @@ const SlideScreen = () => {
   const increaseIndexSlide = (indexSlide) => {
     if (indexSlide < 2) setIndexSlide(indexSlide + 1);
     else {
-      console.log(GetCashLocal("slideScreen"))
       if (GetCashLocal("slideScreen") === "null")
         SetCashLocal("slideScreen", { status: true });
       navigate("/home");
@@ -71,12 +72,12 @@ const SlideScreen = () => {
         <div className="flex flex-col w-full h-[calc(40%)] p-4 items-end justify-end">
           <div className="w-full">
             <TypoTextTitle className={"w-full font-bold text-4xl"}>
-              {slideDetails[indexSlide]?.title}
+              {t(slideDetails[indexSlide]?.title)}
             </TypoTextTitle>
           </div>
           <div className="w-full">
             <TypoTextInfo className={"mt-0.5 text-lg"}>
-              {slideDetails[indexSlide]?.description}
+              {t(slideDetails[indexSlide]?.description)}
             </TypoTextInfo>
           </div>
           <div className="flex flex-row w-full justify-between mb-10">

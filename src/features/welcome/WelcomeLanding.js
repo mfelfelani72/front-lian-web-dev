@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Components
 
@@ -16,6 +17,7 @@ import trade_logo from "../../../assets/images/png/trade-logo.png";
 
 const WelcomeLanding = () => {
   // hooks
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   // functions
@@ -35,7 +37,7 @@ const WelcomeLanding = () => {
             className={"w-[250px] h-[180px]"}
           />
           <TypoTextTitle className={"text-white text-3xl font-spaceGrotesk"}>
-            Lian system
+            {t("app_name")}
           </TypoTextTitle>
         </div>
       </div>

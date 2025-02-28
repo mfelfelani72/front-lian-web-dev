@@ -211,14 +211,14 @@ module.exports = {
         },
         // for click icon
         moveRightLeft: {
-          "0%": { transform: "translateX(0)" },
-          "25%": { transform: "translateX(-10px)" },
-          "100%": { transform: "translateX(0px)" },
+          "0%": { transform: "rotate(180deg) translateX(0)" },
+          "25%": { transform: "rotate(180deg) translateX(10px)" },
+          "100%": { transform: "rotate(180deg) translateX(0px)" },
         },
         moveLeftRight: {
-          "0%": { transform: "rotate(180deg) translateX(0)" },
-          "25%": { transform: "rotate(180deg) translateX(-10px)" },
-          "100%": { transform: "rotate(180deg) translateX(0px)" },
+          "0%": { transform: "translateX(0)" },
+          "25%": { transform: "translateX(10px)" },
+          "100%": { transform: "translateX(0px)" },
         },
         // for explode box
         moveShrinkRoundFadeScatter: {
