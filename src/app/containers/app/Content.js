@@ -7,6 +7,7 @@ import Landing from "./Landing.js";
 const Test = lazy(() => import("../../components/TestCode.jsx"));
 
 // Welcome
+
 const WelcomeLandingLazy = lazy(() =>
   import("../../../features/welcome/WelcomeLanding.js")
 );
@@ -15,7 +16,16 @@ const SlideScreenLazy = lazy(() =>
 );
 
 // Home
-const HomeLanding = lazy(() => import("../../../features/Home/HomeLanding.js"));
+
+const HomeLandingLazy = lazy(() =>
+  import("../../../features/home/HomeLanding.js")
+);
+
+// Auth
+
+const LoginLazy = lazy(() =>
+  import("../../../features/auth/containers/Login.js")
+);
 
 const Content = () => {
   return (
@@ -31,7 +41,7 @@ const Content = () => {
         <Route path="/slide-screen" element={<SlideScreenLazy />}></Route>
 
         {/* Home */}
-        <Route path="/home" element={<HomeLanding />}></Route>
+        <Route path="/home" element={<HomeLandingLazy />}></Route>
       </Routes>
     </div>
   );
