@@ -37,14 +37,14 @@ const Middleware = (location, navigate) => {
     navigate("/landing");
   }
 
-  // redirect dashboard
+  // redirect home
   else if (REDIRECT_ROUTES.includes(location.pathname) && IsLogin() === true) {
-    navigate("/dashboard", { state: { from_location: "redirect" } });
+    navigate("/home", { state: { from_location: "redirect" } });
   }
 
   // show landing page
   else if (location.pathname === "/") {
-    if (IsLogin() === true) navigate("/dashboard");
+    if (IsLogin() === true) navigate("/home");
     else navigate("/landing");
   }
 
