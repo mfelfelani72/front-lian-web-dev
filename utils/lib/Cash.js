@@ -34,7 +34,7 @@ export const GetCashLocal = (name) => {
   return "null";
 };
 export const SetCashSession = (name, object) => {
-  // cash object in local storage
+  // cash object in session storage
   if (object !== "") {
     const existingData = sessionStorage.getItem("data")
       ? JSON.parse(sessionStorage.getItem("data"))
@@ -43,7 +43,7 @@ export const SetCashSession = (name, object) => {
     existingData.push({ [name]: object });
     sessionStorage.setItem("data", JSON.stringify(existingData));
   }
-  // delete object from local storage
+  // delete object from session storage
   else if (sessionStorage.getItem("data")) {
     const existingData = JSON.parse(sessionStorage.getItem("data"));
     const data = [];

@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom";
 import Image from "../../features/core/components/Image.jsx";
 import TypoTextTitle from "../../features/core/components/TypoTextTitle.jsx";
 
+// Functions
+
+import { GetCashLocal } from "../../../utils/lib/Cash.js";
+
 // Svg
 
 import trade_logo from "../../../assets/images/png/trade-logo.png";
@@ -17,8 +21,9 @@ const WelcomeLanding = () => {
   // functions
   useEffect(() => {
     setTimeout(() => {
-      navigate("/slide-screen")
-    }, 3000);
+      if (GetCashLocal("slideScreen")?.status) navigate("/home");
+      else navigate("/slide-screen");
+    }, 1500);
   }, []);
   return (
     <>

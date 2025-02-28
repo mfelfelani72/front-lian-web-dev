@@ -7,7 +7,7 @@ export const ALL_ROUTES = [
   "/",
   "/landing",
   "/slide-screen",
-  "/dashboard",
+  "/home",
   
 ];
 
@@ -20,8 +20,8 @@ export const NOT_RELOAD_ROUTES = [
   [
     "/",
     [
-      // Profile
-      "/profile",
+      // Welcome
+      "/slide-screen",
      
     ],
   ],

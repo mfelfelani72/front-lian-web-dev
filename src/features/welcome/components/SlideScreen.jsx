@@ -9,6 +9,7 @@ import TypoTextInfo from "../../core/components/TypoTextInfo.jsx";
 
 // Functions
 import { IconMoveLeftRight } from "../../../../utils/lib/Animations.js";
+import { GetCashLocal, SetCashLocal } from "../../../../utils/lib/Cash.js";
 
 // Svg & Png
 
@@ -45,11 +46,15 @@ const SlideScreen = () => {
 
   const increaseIndexSlide = (indexSlide) => {
     if (indexSlide < 2) setIndexSlide(indexSlide + 1);
-    else navigate("/");
+    else {
+      console.log(GetCashLocal("slideScreen"))
+      if (GetCashLocal("slideScreen") === "null")
+        SetCashLocal("slideScreen", { status: true });
+      navigate("/home");
+    }
   };
 
   const handleClick = () => {
-    console.log(indexSlide);
     IconMoveLeftRight("arrow", increaseIndexSlide, indexSlide);
   };
 
