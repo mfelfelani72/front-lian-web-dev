@@ -17,7 +17,7 @@ const HomeLanding = () => {
       <div
         className="text-4xl cursor-pointer"
         onClick={() => {
-          navigate("/login");
+          navigate("/register");
         }}
       >
         register
