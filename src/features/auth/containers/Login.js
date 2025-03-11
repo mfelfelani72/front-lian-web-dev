@@ -11,6 +11,7 @@ import TypoTextInfo from "../../core/components/TypoTextInfo.jsx";
 import { InputEmail, InputPassword } from "../../core/components/Input.jsx";
 import Button from "../../core/components/Button.jsx";
 import TypoTextButton from "../../core/components/TypoTextButton.jsx";
+import LoaderDotSpinner from "../../core/components/LoaderDotSpinner.jsx";
 
 // Functions
 
@@ -67,7 +68,7 @@ const Login = () => {
               Sign in to access your account
             </TypoTextInfo>
             <div className="w-full mt-12">
-              <InputEmail id="email" placeholder="Enter your email" />
+              <InputEmail id="username" placeholder="Enter your email" />
             </div>
             <div className="w-full mt-6">
               <InputPassword

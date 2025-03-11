@@ -37,15 +37,15 @@ const Login = (navigate, param, setErrors, cookies, setSendRequest) => {
     (response) => {
       // console.log(response);
       if (response?.data?.return) {
-        sessionStorage.setItem("session_id", response?.data?.user_token);
-        sessionStorage.setItem("key", response?.data?.user_id);
+        sessionStorage.setItem("session_id", response?.data?.record?.token);
+        sessionStorage.setItem("key", response?.data?.record?.user?.id);
         setSendRequest(false);
         navigate("/", {
-          state: { to_location: "/profile" },
+          state: { to_location: "/home" },
         });
       } else if (response?.data?.return === false) {
         setSendRequest(false);
-        setErrors({ password: "login_invalid" });
+        setErrors({ password: response?.data?.message });
         SetErrorOnInput(param);
       }
     }

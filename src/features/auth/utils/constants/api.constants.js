@@ -28,7 +28,7 @@ export const serverOtpRequest = "Otp/SendOtpToUnknownUser/";
 export const serverOtpRequestKnown = "Otp/SendOtpToUser/";
 
 // Route for user login
-export const userLogin = "User/UserLogin/";
+export const userLogin = "login";
 
 // Route for user registration
 export const userRegister = "User/UserRegister/";

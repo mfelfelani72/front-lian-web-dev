@@ -10,7 +10,7 @@ import { cn } from "../../../../utils/lib/cn.js";
 
 // Svg
 
-import loader from "../../../../assets/images/12-dots-scale-rotate.svg";
+import loader from "../../../../assets/icons/svg/12-dots-scale-rotate.svg";
 
 const LoaderDotSpinner = ({ className, ...props }) => {
   return (
