@@ -5,7 +5,7 @@ export const userAuth = "Auth/CheckUserAuth/";
 export const serverTitleRoute = `Title/GetTitleByCode/`;
 
 // Route to retrieve a title by code
-export const userLogout = `User/UserLogout/`;
+export const userLogout = `logout`;
 
 // Route to check user authentication
 export const serverAuthCheck = "Auth/CheckUserAuth/";

@@ -12,6 +12,7 @@ const Logout = (navigate, setKey, cookies, removeToken) => {
   const header = {
     headers: {
       "X-CSRFTOKEN": cookies["csrftoken"],
+      Authorization: "Bearer " + sessionStorage.getItem("session_id"),
     },
   };
   ConnectToServer("post", userLogout, "", header, "logout").then((response) => {
