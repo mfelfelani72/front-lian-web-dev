@@ -7,7 +7,7 @@ import { ConnectToServer } from "../../../../../utils/services/api/ConnectToServ
 import { userLogout } from "../../utils/constants/api.constants.js";
 
 const Logout = (navigate, setKey, cookies, removeToken) => {
-  if (localStorage.getItem("data")) localStorage.removeItem("data");
+  // if (localStorage.getItem("data")) localStorage.removeItem("data");
 
   const header = {
     headers: {
