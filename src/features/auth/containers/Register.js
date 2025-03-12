@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useCookies } from "react-cookie";
@@ -58,8 +58,11 @@ const Register = () => {
 
     if (!sendRequest)
       RegisterUser(navigate, setErrors, parameter, setSendRequest);
-    setSendRequest(true);
+    // setSendRequest(true);
   };
+  useEffect(()=>{
+   console.log(errors["email"]) 
+  })
   return (
     <>
       <div className="flex flex-col h-full w-full xs:w-[25rem] p-8">
@@ -83,7 +86,11 @@ const Register = () => {
               <InputText id="name" placeholder="Enter full name" />
             </div>
             <div className="w-full mt-6">
-              <InputEmail id="email" placeholder="Enter your email" />
+              <InputEmail
+                id="email"
+                placeholder="Enter your email"
+                error={errors["email"]}
+              />
             </div>
             <div className="w-full mt-6">
               <InputMobile id="mobile" placeholder="Enter your mobile" />
@@ -113,7 +120,7 @@ const Register = () => {
               className="hidden relative bg-[#ff3951]"
             >
               <TypoTextButton className="text-white">
-                {t("login")}
+                {t("register")}
               </TypoTextButton>
               {sendRequest && (
                 <LoaderDotSpinner className={"rtl:left-0 ltr:right-0"} />
@@ -124,7 +131,7 @@ const Register = () => {
               className="flex bg-Neutral/100 hover:bg-Neutral/100 focus:bg-Neutral/100 pointer-events-none cursor-default"
             >
               <TypoTextButton className="text-white">
-                {t("login")}
+                {t("register")}
               </TypoTextButton>
             </Button>
           </div>
