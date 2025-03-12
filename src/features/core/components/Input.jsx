@@ -11,7 +11,7 @@ import TypoTextInputError from "./TypoTextInputError.jsx";
 import closeSquare from "../../../../assets/icons/svg/CloseSquare.svg";
 import lock from "../../../../assets/icons/svg/Lock.svg";
 import message from "../../../../assets/icons/svg/Message.svg";
-// import call from "../../../../assets/icons/svg/Call.svg";
+import call from "../../../../assets/icons/svg/Call.svg";
 import show from "../../../../assets/icons/svg/show.svg";
 // import hide from "../../../../assets/icons/svg/Hide.svg";
 import dangerCircle from "../../../../assets/icons/svg/dc.svg";
@@ -24,7 +24,6 @@ import dangerCircle from "../../../../assets/icons/svg/dc.svg";
 
 import { cn } from "../../../../utils/lib/cn.js";
 import TypoTextInfo from "./TypoTextInfo.jsx";
-
 
 //  --> for remove value input and disable submit Button
 const handleClear = (id, first_id, secound_id, afterFunction) => {
@@ -87,60 +86,36 @@ const ComparePassword = (event, Button_id) => {
   }
 };
 
-// export const InputText = ({ ...props }) => {
-//   return (
-//     <>
-//       <div className="w-full relative">
-//         <input
-//           {...props}
-//           type="text"
-//           className="placeholder-Neutral/200 w-full px-[1rem] py-3 rounded-2xl bg-secondary/50 border border-secondary/100 focus:outline-none focus:ring-0 focus:border-secondary/400 justify-between items-center relative"
-//         />
-//         {props?.disabled !== "disabled" && (
-//           <div className="absolute inset-y-0 rtl:left-0 ltr:right-0 pl-3 flex items-center">
-//             <div className="p-2">
-//               <div className="flex" onClick={() => handleClear(props?.id)}>
-//                 <Image
-//                   alt="closeSquare"
-//                   src={closeSquare}
-//                   className="cursor-pointer"
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//         )}
-//       </div>
-//     </>
-//   );
-// };
-// export const InputNumbers = ({ ...props }) => {
-//   return (
-//     <>
-//       <div className="w-full relative">
-//         <input
-//           {...props}
-//           type="number"
-//           inputMode="numeric"
-//           className="no-spinners placeholder-Neutral/200 w-full px-[1rem] py-3 rounded-2xl bg-secondary/50 border border-secondary/100 focus:outline-none focus:ring-0 focus:border-secondary/400 justify-between items-center relative"
-//         />
-//         <div className="absolute inset-y-0 rtl:left-0 ltr:right-0 pl-3 flex items-center">
-//           <div className="p-2">
-//             <div
-//               className="flex"
-//               onClick={() => handleClear(props?.id, "", "", props?.onChange)}
-//             >
-//               <Image
-//                 alt="closeSquare"
-//                 src={closeSquare}
-//                 className="cursor-pointer"
-//               />
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
+export const InputText = ({ className, ...props }) => {
+  return (
+    <>
+      <div className="w-full relative">
+        <input
+          {...props}
+          type="text"
+          className={cn(
+            "placeholder-Neutral/200 w-full px-[1rem] py-3 rounded-2xl bg-secondary/50 border border-secondary/100 focus:outline-none focus:ring-0 focus:border-secondary/400 justify-between items-center relative",
+            className
+          )}
+        />
+        {props?.disabled !== "disabled" && (
+          <div className="absolute inset-y-0 rtl:left-0 ltr:right-0 pl-3 flex items-center">
+            <div className="p-2">
+              <div className="flex" onClick={() => handleClear(props?.id)}>
+                <Image
+                  alt="closeSquare"
+                  src={closeSquare}
+                  className="cursor-pointer"
+                />
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
+};
+
 export const InputPassword = ({ ...props }) => {
   const { t } = useTranslation();
 
@@ -376,97 +351,97 @@ export const InputEmail = ({ className, ...props }) => {
     </>
   );
 };
-// export const InputMobile = ({ ...props }) => {
-//   const { t } = useTranslation();
-//   return (
-//     <>
-//       <div className="w-full relative">
-//         <input
-//           {...props}
-//           type="tel"
-//           inputMode="numeric"
-//           pattern="^09[0-9]{9}$"
-//           maxLength={11}
-//           className="peer rtl:text-right ltr:text-left placeholder-Neutral/200 w-full px-[2.7rem] py-3 rounded-2xl bg-secondary/50 border border-secondary/100 focus:outline-none focus:ring-0 focus:border-secondary/400 justify-between items-center relative"
-//           onBlur={() => {
-//             document
-//               .getElementById("input_mobile_validate")
-//               .classList.add("hidden");
-//           }}
-//           onFocus={() => {
-//             document.getElementById("danger_mobile").classList.add("hidden");
-//             document.getElementById("close_mobile").classList.remove("hidden");
-//             document.getElementById("close_mobile").classList.add("flex");
-//           }}
-//         />
-//         {props?.disabled !== "disabled" && (
-//           <div
-//             id="close_mobile"
-//             className="absolute inset-y-0 rtl:left-0 ltr:right-0 pl-3 flex items-center "
-//           >
-//             <div className="p-2">
-//               <div
-//                 className="flex"
-//                 onClick={() =>
-//                   handleClear(
-//                     props?.id,
-//                     props?.button_first_id,
-//                     props?.button_secound_id
-//                   )
-//                 }
-//               >
-//                 <Image
-//                   alt="closeSquare"
-//                   src={closeSquare}
-//                   className="w-6 h-6 cursor-pointer"
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//         )}
+export const InputMobile = ({ ...props }) => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <div className="w-full relative">
+        <input
+          {...props}
+          type="tel"
+          inputMode="numeric"
+          pattern="^09[0-9]{9}$"
+          maxLength={11}
+          className="peer rtl:text-right ltr:text-left placeholder-Neutral/200 w-full px-[2.7rem] py-3 rounded-2xl bg-secondary/50 border border-secondary/100 focus:outline-none focus:ring-0 focus:border-secondary/400 justify-between items-center relative"
+          onBlur={() => {
+            document
+              .getElementById("input_mobile_validate")
+              .classList.add("hidden");
+          }}
+          onFocus={() => {
+            document.getElementById("danger_mobile").classList.add("hidden");
+            document.getElementById("close_mobile").classList.remove("hidden");
+            document.getElementById("close_mobile").classList.add("flex");
+          }}
+        />
+        {props?.disabled !== "disabled" && (
+          <div
+            id="close_mobile"
+            className="absolute inset-y-0 rtl:left-0 ltr:right-0 pl-3 flex items-center "
+          >
+            <div className="p-2">
+              <div
+                className="flex"
+                onClick={() =>
+                  handleClear(
+                    props?.id,
+                    props?.button_first_id,
+                    props?.button_secound_id
+                  )
+                }
+              >
+                <Image
+                  alt="closeSquare"
+                  src={closeSquare}
+                  className="w-6 h-6 cursor-pointer"
+                />
+              </div>
+            </div>
+          </div>
+        )}
 
-//         <div
-//           id="danger_mobile"
-//           className="hidden absolute top-[7px] rtl:left-[1px] ltr:right-[1px] rtl:pl-3 ltr:pr-3 items-center "
-//         >
-//           <div className="p-2">
-//             <div className="flex">
-//               <Image
-//                 className={"w-6 h-6"}
-//                 alt="dangerCircle"
-//                 src={dangerCircle}
-//               />
-//             </div>
-//           </div>
-//         </div>
-//         <div className="absolute inset-y-0 rtl:right-0 ltr:left-0 ltr:pl-3 rtl:pr-3 flex items-center pointer-events-none">
-//           <div className="">
-//             <div className="flex">
-//               <img
-//                 alt="call"
-//                 src={call}
-//                 loading="lazy"
-//                 className="w-full h-full"
-//               ></img>
-//             </div>
-//           </div>
-//         </div>
-//         {/* input validate */}
-//         {props?.error !== "" && (
-//           <div
-//             id="input_mobile_validate"
-//             className="peer-focus:hidden absolute mt-2 mx-3"
-//           >
-//             <TypoTextInputError>{t(props?.error)}</TypoTextInputError>
-//           </div>
-//         )}
-//         <div className={`hidden peer-invalid:flex absolute mt-2 mx-3`}>
-//           <TypoTextInputError>{t("error_invalid_mobile")}</TypoTextInputError>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
+        <div
+          id="danger_mobile"
+          className="hidden absolute top-[7px] rtl:left-[1px] ltr:right-[1px] rtl:pl-3 ltr:pr-3 items-center "
+        >
+          <div className="p-2">
+            <div className="flex">
+              <Image
+                className={"w-6 h-6"}
+                alt="dangerCircle"
+                src={dangerCircle}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="absolute inset-y-0 rtl:right-0 ltr:left-0 ltr:pl-3 rtl:pr-3 flex items-center pointer-events-none">
+          <div className="">
+            <div className="flex">
+              <img
+                alt="call"
+                src={call}
+                loading="lazy"
+                className="w-full h-full"
+              ></img>
+            </div>
+          </div>
+        </div>
+        {/* input validate */}
+        {props?.error !== "" && (
+          <div
+            id="input_mobile_validate"
+            className="peer-focus:hidden absolute mt-2 mx-3"
+          >
+            <TypoTextInputError>{t(props?.error)}</TypoTextInputError>
+          </div>
+        )}
+        <div className={`hidden peer-invalid:flex absolute mt-2 mx-3`}>
+          <TypoTextInputError>{t("error_invalid_mobile")}</TypoTextInputError>
+        </div>
+      </div>
+    </>
+  );
+};
 // export const InputRePassword = ({ ...props }) => {
 //   const { t } = useTranslation();
 //   // states

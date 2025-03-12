@@ -7,7 +7,7 @@ import SetErrorOnInput from "../../../../../utils/lib/SetErrorOnInput.js";
 
 import { userLogin } from "../constants/api.constants.js";
 
-const Login = (navigate, param, setErrors, cookies, setSendRequest) => {
+const LoginUser = (navigate, inputName, setErrors, cookies, setSendRequest) => {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
@@ -46,10 +46,10 @@ const Login = (navigate, param, setErrors, cookies, setSendRequest) => {
       } else if (response?.data?.return === false) {
         setSendRequest(false);
         setErrors({ password: response?.data?.message });
-        SetErrorOnInput(param);
+        SetErrorOnInput(inputName);
       }
     }
   );
 };
 
-export default Login;
+export default LoginUser;

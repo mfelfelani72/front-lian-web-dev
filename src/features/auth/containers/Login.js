@@ -16,7 +16,7 @@ import LoaderDotSpinner from "../../core/components/LoaderDotSpinner.jsx";
 // Functions
 
 import EnableButtonControl from "../utils/lib/EnableButtonControl.js";
-import LoginUser from "../utils/lib/Login.js";
+import LoginUser from "../utils/lib/LoginUser.js";
 
 // Svg and Png
 
